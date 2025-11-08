@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('A.jpg') no-repeat center center fixed;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px #000;
+        }
+        form {
+            background-color: #003366;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 400px;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        input, select, textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid #00509e;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .form-row {
+            margin-bottom: 15px;
+        }
+        .form-row label {
+            margin-bottom: 5px;
+        }
+        input[type="submit"] {
+            background-color: #0074D9;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #00509e;
+        }
+    </style>
+</head>
+<body>
+   
+    <form id="discordForm">
+        <h2>Mission Form ver 15</h2>
+
+       <!-- Date Time Field -->
+       <label for="datetime">Date and Time (UTC):</label>
+       <input type="datetime-local" id="datetime" name="datetime" required>
+
+        <!-- Dep/Arr Field -->
+        <label for="depArr">Dep/Arr:</label>
+        <select id="depArr" name="depArr" required>
+		            <!-- SINAI Options -->
+            <optgroup label="SINAI MAP">
+            <option value="SINAI MAP - NEVATIM AFB">NEVATIM AFB</option>
+            <option value="SINAI MAP - RAMON AFB">RAMON AFB</option>
+            <option value="SINAI MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+			<option value="SINAI MAP - CV74 STENNIS">CV74 STENNIS</option>
+			<option value="SINAI MAP - CV75 TRUMAN">CV75 TRUMAN</option>
+            <option value="SINAI MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+            <option value="SINAI MAP - INSHAS AFB">INSHAS AFB</option>
+            <option value="SINAI MAP - MELEZ AFB">MELEZ AFB</option>
+            </optgroup>
+            <!-- SYRIA Options -->
+            <optgroup label="SYRIA MAP">
+			    <option value="SYRIA MAP - AKROTIRI AFB">AKROTIRI AFB</option>
+				<option value="SYRIA MAP - PAPHOS">PAPHOS</option>
+                <option value="SYRIA MAP - INCIRLIK AFB">INCIRLIK AFB</option>
+                <option value="SYRIA MAP - RAMAT AFB">RAMAT AFB</option>
+				<option value="SYRIA MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="SYRIA MAP - CV74 STENNIS">CV74 STENNIS</option>
+				<option value="SYRIA MAP - CV75 TRUMAN">CV75 TRUMAN</option>
+				<option value="SYRIA MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="SYRIA MAP - AL-ASSAD">AL-ASSAD</option>
+                <option value="SYRIA MAP - H3">H3</option>
+            </optgroup>
+			            <!-- GULF Options -->
+            <optgroup label="PERSIAN GULF MAP">
+			    <option value="PERSIAN GULF MAP - DHAFRA AFB">DHAFRA AFB</option>
+                <option value="PERSIAN GULF MAP - MINHAD AFB">MINHAD AFB</option>
+				<option value="PERSIAN GULF MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="PERSIAN GULF MAP - CV74 STENNIS">CV74 STENNIS</option>
+				<option value="PERSIAN GULF MAP - CV75 TRUMAN">CV75 TRUMAN</option>
+				<option value="PERSIAN GULF MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="PERSIAN GULF MAP - SHIRAZ intl">SHIRAZ intl</option>
+                <option value="PERSIAN GULF MAP - BANDAR ABBAS intl">BANDAR ABBAS intl</option>
+            </optgroup>
+						            <!-- CAUCASUS Options -->
+            <optgroup label="CAUCASUS MAP">
+			    <option value="CAUCASUS MAP - SENAKI">SENAKI</option>
+                <option value="CAUCASUS MAP - KUTAISI">KUTAISI</option>
+				<option value="CAUCASUS MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="CAUCASUS MAP - CV74 STENNIS">CV74 STENNIS</option>
+				<option value="CAUCASUS MAP - CV75 TRUMAN">CV75 TRUMAN</option>
+				<option value="CAUCASUS MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+		        <option value="CAUCASUS MAP - KRASNODAR CENTER">KRASNODAR CENTER</option>
+                <option value="CAUCASUS MAP - MOZDOK">MOZDOK</option>
+            </optgroup>
+						            <!-- KOLA Options -->
+            <optgroup label="KOLA MAP">
+				<option value="KOLA MAP - BARDUFOSS">BARDUFOSS</option>
+                <option value="KOLA MAP - BODO">BODO</option>
+				<option value="KOLA MAP - EVENES">EVENES</option>
+				<option value="KOLA MAP - ANDOYA">ANDOYA</option>
+                <option value="KOLA MAP - ROVANIEMI">ROVANIEMI</option>
+				<option value="KOLA MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="KOLA MAP - CV74 STENNIS">CV74 STENNIS</option>
+				<option value="KOLA MAP - CV75 TRUMAN">CV75 TRUMAN</option>
+				<option value="KOLA MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="KOLA MAP - MONCHEGORSK">MONCHEGORSK</option>
+                <option value="KOLA MAP - SEVEROMORSK-3">SEVEROMORSK-3</option>
+				<option value="KOLA MAP - OLENYA">OLENYA</option>
+                <option value="KOLA MAP - SEVEROMORSK-1">SEVEROMORSK-1</option>
+            </optgroup>
+									            <!-- GERMANY Options -->
+            <optgroup label="GERMANY MAP">
+                <option value="GERMANY MAP - RAMSTEIN">RAMSTEIN</option>
+                <option value="GERMANY MAP - SPANGDAHLEM">SPANGDAHLEM</option>
+				<option value="GERMANY MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="GERMANY MAP - CV74 STENNIS">CV74 STENNIS</option>
+				<option value="GERMANY MAP - CV75 TRUMAN">CV75 TRUMAN</option>
+				<option value="GERMANY MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="GERMANY MAP - XXX">XXX</option>
+                <option value="GERMANY MAP - XXX">XXX</option>
+            </optgroup>
+									            <!-- NEVADA Options -->
+            <optgroup label="NEVADA MAP">
+                <option value="NEVADA MAP - NELLIS AFB">NELLIS AFB</option>
+                <option value="NEVADA MAP - TONOPAH TEST RANGE">TONOPAH TEST RANGE</option>
+				<option value="NEVADA MAP - GROOM LAKE">GROOM LAKE</option>
+				<option value="NEVADA MAP - CREECH">CREECH</option>
+            </optgroup>
+									            <!-- IRAQ Options -->
+            <optgroup label="IRAQ MAP">
+                <option value="IRAQ MAP - XXX">XXX</option>
+                <option value="IRAQ MAP - XXX">XXX</option>
+				<option value="IRAQ MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="IRAQ MAP - CV74 STENNIS">CV74 STENNIS</option>
+				<option value="IRAQ MAP - CV75 TRUMAN">CV75 TRUMAN</option>
+				<option value="IRAQ MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="IRAQ MAP - AL-ASAD">AL-ASAD</option>
+                <option value="IRAQ MAP - AL-SALAM">AL-SALAM</option>
+            </optgroup>
+												            <!-- MARIANAS Options -->
+            <optgroup label="MARIANAS MAP">
+                <option value="MARIANAS MAP - ANDERSEN AFB">ANDERSEN AFB</option>
+                <option value="MARIANAS MAP - SAIPAN">SAIPAN</option>
+				<option value="MARIANAS MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="MARIANAS MAP - CV74 STENNIS">CV74 STENNIS</option>
+				<option value="MARIANAS MAP - CV75 TRUMAN">CV75 TRUMAN</option>
+				<option value="MARIANAS MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+            </optgroup>
+												            <!-- AFGANISTAN Options -->
+            <optgroup label="AFGANISTAN MAP">
+			    <option value="AFGANISTAN MAP - BAGRAM">BAGRAM</option>
+                <option value="AFGANISTAN MAP - KANDAHAR">KANDAHAR</option>
+                <option value="AFGANISTAN MAP - CAMP BASTION">CAMP BASTION</option>
+				<option value="AFGANISTAN MAP - KABUL">KABUL</option>
+				<option value="AFGANISTAN MAP - SHINDAND">SHINDAND</option>
+				<option value="AFGANISTAN MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="AFGANISTAN MAP - CV74 STENNIS">CV74 STENNIS</option>
+				<option value="AFGANISTAN MAP - CV75 TRUMAN">CV75 TRUMAN</option>
+				<option value="AFGANISTAN MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+
+
+            </optgroup>
+			<optgroup label="SOUTH ATLANTIC MAP">
+                <option value="SOUTH ATLANTIC  MAP - MOUNT PLEASANT">MOUNT PLEASANT</option>
+                <option value="SOUTH ATLANTIC  MAP - RIO GRANDE">RIO GRANDE</option>
+				<option value="SOUTH ATLANTIC  MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="SOUTH ATLANTIC MAP - CV74 STENNIS">CV74 STENNIS</option>
+				<option value="SOUTH ATLANTIC MAP - CV75 TRUMAN">CV75 TRUMAN</option>
+				<option value="SOUTH ATLANTIC  MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="SOUTH ATLANTIC  MAP - PUNTA ARENAS">PUNTA ARENAS</option>
+                <option value="SOUTH ATLANTIC  MAP - RIO GALLEGOS">RIO GALLEGOS</option>
+            </optgroup>
+        </select>
+
+        <!-- Aircraft Field -->
+        <label for="aircraft">Aircraft:</label>
+        <select id="aircraft" name="aircraft" required>
+		<!-- JET Options -->
+		<optgroup label="JET">
+			<option value="A-4E-C">A4E-C</option>
+			<option value="A-7E">A-7E</option>
+            <option value="A-10C">A-10C</option>
+			<option value="AJS-37">AJ-S37</option>
+			<option value="AV-8BNA">AV-8BNA</option>
+			<option value="E/A-6B">E/A-6B</option>
+			<option value="E/A-18E/F">E/A-18G</option>
+			<option value="EFA">EFA</option>
+			<option value="F-1CE/EE/M">F-1CE/EE/M</option>
+			<option value="F-4E">F-4E</option>
+			<option value="F-5E">F-5E</option>
+			<option value="F-14A/B">F-14A/B</option>
+			<option value="F-15C">F-15C</option>
+            <option value="F-15E">F-15E</option>
+            <option value="F-16C/D">F-16C/D</option>
+            <option value="F/A-18C/D">F/A-18C/D</option>
+			<option value="F/A-18E/F">F/A-18E/F</option>
+			<option value="F-22A">F-22A</option>
+			<option value="F-23A">F-23A</option>
+			<option value="F-35A/B/C">F-35A/B/C</option>
+            <option value="F-86F">F-86F</option>
+			<option value="F-100D">F-100D</option>
+			<option value="F-104C/G">F-104C/G</option>
+			<option value="G-91R">G-91R</option>
+            <option value="M-2000C">M-2000C</option>
+			<option value="MIG-15bis">MIG-15bis</option>
+			<option value="MIG-17F">MIG-17F</option>
+			<option value="MIG-21bis">MIG-21bis</option>
+			<option value="MIG-25P/RB">MIG-25P/RB</option>
+            <option value="MIG-29A/S/G">MIG-29A/S/G</option>
+			<option value="MIG-31">MIG-31</option>
+			<option value="PA-200 TORNADO">PA-200 TORNADO</option>
+			<option value="Rafale B/C/M">Rafale B/C/M</option>
+			<option value="SU-25T">SU-25T</option>
+		    <option value="SU-27">SU-27</option>
+			<option value="SU-30SM/MKA">SU-30SM/MKA</option>			
+			<option value="SU-33">SU-33</option>
+			<option value="SU-34">SU-34</option>
+			<option value="SU-35/S">SU-35/S</option>
+			<option value="SU-57">SU-57</option>
+			<option value="JAS-39C">JAS-39C</option>
+			<option value="JF-17b2">JF-17b2</option>
+			<option value="J-8II">J-8II</option>
+			<option value="J-11A">J-11A</option>
+			<option value="KFIR">KFIR</option>
+
+		<!-- TRAINER Options -->
+		<optgroup label="TRAINER">
+			<option value="A-29B Tucano">A-29B Tucano</option>
+			<option value="C-101CC/EB">C-101CC/EB</option>
+			<option value="MB-339A">MB-339A</option>
+			<option value="F1BE">F1BE</option>
+			<option value="L-39C/ZA">L-39C/ZA</option>
+			<option value="OV-10A">OV-10A</option>
+			<option value="T-6B Texan II">T-6B Texan II</option>
+			<option value="T-38A/C">T-38A/C</option>
+			<option value="T-45C">T-45C</option>
+			<option value="SK60">SK60</option>
+			<option value="PC-9A">PC-9A</option>
+			<option value="YAK-52">YAK-52</option>
+         <!-- HELO Options -->
+        <optgroup label="HELO">
+			<option value="AH-64D">AH-64D</option>
+			<option value="AH-1G">AH-1G</option>
+            <option value="CH-47F">CH-47F</option>
+			<option value="KA-50">KA-50</option>
+            <option value="UH-1H">UH-1H</option>
+			<option value="UH-60L">UH-60L</option>
+			<option value="OH-6A">OH-6A</option>
+			<option value="OH-58D">OH-58D</option>
+			<option value="MI-24P">MI-24P</option>
+			<option value="MI-8MTV2">MI-8MTV2</option>
+			<option value="SA-342M">SA-342M</option>
+			
+					<!-- tran Options -->
+		<optgroup label="TRANSPORT">
+			<option value="C130H/J">C130H/J</option>
+
+		<!-- ww2 Options -->
+		<optgroup label="WW2">
+			<option value="A6M5B Zero">A6M5B Zero</option>
+			<option value="Bf-109k">Bf-109k</option>
+			<option value="P-47D">P-47D</option>
+			<option value="P-51D">P-51D</option>
+			<option value="FW-190A8/D9">FW-190A8/D9</option>
+			<option value="F-4U-1D">F-4U-1D</option>
+			<option value="F-6F">F-6F</option>
+			<option value="Spitfire">Spitfire</option>
+
+        </select>
+				        <!-- callsign Field -->
+        <label for="callsign">Callsign:</label>
+        <select id="callsign" name="callsign" required>
+            <option value="Hornet 134.10">Hornet</option>
+			<option value="Rock 134.25">Rock</option>
+            <option value="Snake 134.35">Snake</option>
+			<option value="Cowboy 134.45">Cowboy</option>
+			<option value="Viper 134.55">Viper</option>
+            <option value="Venom 134.65">Venom</option>
+			<option value="Falcon 134.75">Falcon</option>
+			<option value="Austin 134.85">Austin</option>
+            <option value="Eagle 134.95">Eagle</option>
+			<option value="Mirage 236.10">Mirage</option>
+			<option value="Fulcrum 236.15">Fulcrum</option>
+            <option value="Spider 236.20">Spider</option>
+			<option value="Wolf 236.35">Wolf</option>
+            <option value="Hawg 236.40">Hawg</option>
+			<option value="Phantom 236.55">Phantom</option>
+            <option value="Victory 247.70">Victory</option>
+			<option value="Bullet 241.55">Bullet</option>
+			<option value="Knight 245.05">Knight</option>
+			<option value="N/A">N/A</option>
+
+        </select>
+
+        <!-- Mission Type Field -->
+        <label for="type">Mission:</label>
+        <select id="type" name="type" required>
+			<!-- UPT Options -->
+			<optgroup label="UPT -  Undergraduate Pilot Training">
+			    <option value="UPT Contact Flight">Contact Flight</option>
+                <option value="UPT Formation Flight">Formation Flight</option>
+                <option value="UPT Aerobatics">Aerobatics</option>
+                <option value="UPT Night Flight">Night Flight</option>
+                <option value="UPT Cross-Country Navigation">Cross-Country Navigation</option>
+                <option value="UPT Advanced Formation">Advanced Formation</option>
+                <option value="UPT Low-Level Navigation">Low-Level Navigation</option>
+            </optgroup>
+
+			            <!-- IFF Options -->
+			<optgroup label="IFF - Introduction to Fighter Fundamentals">
+			    <option value="IFF Basic Fighter Maneuvers (BFM)">Basic Fighter Maneuvers (BFM)</option>
+                <option value="IFF Tactical Formation">Tactical Formation</option>
+                <option value="IFF Low-Level Tactical Navigation">Low-Level Tactical Navigation</option>
+                <option value="IFF Air-to-Air Engagements (1v1)">Air-to-Air Engagements (1v1)</option>
+                <option value="IFF Basic Surface Attack">Basic Surface Attack</option>
+                <option value="IFF Intercept ">Intercept </option>
+            </optgroup>
+			
+						            <!-- BCOURSE Options -->
+            <optgroup label="B-COURSE - Basic Course">
+			  			<option value="B-Course Aircraft Familiarization">Aircraft Familiarization</option>
+						<option value="B-Course Emergency Procedures">Emergency Procedures</option>
+						<option value="B-Course Instrument Qualification">Instrument Qualification</option>
+						<option value="B-Course Basic Fighter Maneuvers (BFM)">Basic Fighter Maneuvers (BFM)</option>
+						<option value="B-Course Tactical Formation">Tactical Formation</option>
+						<option value="B-Course Low-Level Navigation">Low-Level Navigation</option>
+						<option value="B-Course Surface Attack (Practice/Live Munitions)">Surface Attack (Practice/Live Munitions)</option>
+						<option value="B-Course Strafing Run">Strafing Run</option>						
+						<option value="B-Course Air-to-Air Engagements (Simulated)">Air-to-Air Engagements (Simulated)</option>
+						<option value="B-Course Basic Close Air Support (CAS)">Basic Close Air Support (CAS)</option>
+						<option value="B-Course Air-to-Air Refueling (AAR)">Air-to-Air Refueling (AAR)</option>
+            </optgroup>
+			
+												            <!-- PFT Options -->
+            <optgroup label="PFT -  Primary Flight Training ">
+			  			<option value="PFT Basic Handling ">Basic Handling </option>
+			  			<option value="PFT Basic Aerobatics">Basic Aerobatics</option>
+			  			<option value="PFT Instrument Flight">Instrument Flight</option>						
+						<option value="PFT Formation Flight">Formation Flight</option>				
+						<option value="PFT Night Flight">Night Flight</option>
+						<option value="PFT Cross-Country Navigation">Cross-Country Navigation</option>
+					
+						
+            </optgroup>
+															            <!-- IFT Options -->
+            <optgroup label="IFT -  Intermediate Flight Training ">
+			  	<option value="IFT Jet Familiarization">Jet Familiarization</option>
+				<option value="IFT Carrier Qualification (Field)">Carrier Qualification (Field)</option>
+				<option value="IFT Instrument Flight">Instrument Flight</option>
+				<option value="IFT Basic Fighter Maneuvers (BFM)">Basic Fighter Maneuvers (BFM)</option>
+				<option value="IFT Tactical Formation">Tactical Formation</option>
+				<option value="IFT Low-Level Navigation">Low-Level Navigation</option>
+						<option value="IFT Basic Surface Attack">Basic Surface Attack</option>
+		
+            </optgroup>
+																		            <!-- AFT Options -->
+            <optgroup label="AFT -  Advanced Flight Training ">
+			<option value="AFT Carrier Qualification (Shipboard) ">Carrier Qualification (Shipboard) </option>
+			<option value="AFT Advanced Fighter Maneuvers (AFM)">Advanced Fighter Maneuvers (AFM)</option>
+			<option value="AFT Tactical Formation ">Tactical Formation </option>
+			<option value="AFT Low-Level Navigation">Low-Level Navigation</option>
+			<option value="AFT Surface Attack (Simulated)">Surface Attack (Simulated)</option>
+			<option value="AFT Intercept ">Intercept </option>
+			<option value="AFT Close Air Support (CAS)">Close Air Support (CAS)</option>
+            </optgroup>
+	
+			
+									            <!-- FRS Options -->
+            <optgroup label="FRS - Fleet Replacement Squadron">
+			  			<option value="FRS Aircraft Familiarization">Aircraft Familiarization</option>
+						<option value="FRS Emergency Procedures">Emergency Procedures</option>
+						<option value="FRS Carrier Operations">Carrier Operations</option>
+						<option value="FRS Air-to-Air Engagements (Simulated)">Air-to-Air Engagements (Simulated)</option>
+						<option value="FRS Surface Attack (Practice/Live Munitions)">Surface Attack (Practice/Live Munitions)</option>
+						<option value="FRS Close Air Support (CAS)">Close Air Support (CAS)</option>
+						<option value="FRS Air-to-Air Refueling (AAR)">Air-to-Air Refueling (AAR)</option>
+            </optgroup>
+					
+            </optgroup>
+
+            <!-- MQT Options -->
+            <optgroup label="MQT - Mission Qualification Training">
+			
+				<option value="MQT Squadron Orientation Flight">Squadron Orientation Flight</option>
+                <option value="MQT Advanced Low-Level Navigation">Advanced Low-Level Navigation</option>
+				<option value="MQT Advanced Carrier Operations">Advanced Carrier Operations</option>
+				<option value="MQT Air-to-Air Combat">Air-to-Air Combat</option>
+                <option value="MQT Close Air Support (CAS)">Close Air Support (CAS)</option>				
+				<option value="MQT Air-to-Ground Strike">Air-to-Ground Strike</option>
+				<option value="MQT Suppression of Enemy Air Defenses (SEAD) ">Suppression of Enemy Air Defenses (SEAD)</option>
+				<option value="MQT Night Operations">Night Operations</option>
+				<option value="MQT Large Force Exercise (LFE)">Large Force Exercise (LFE)</option>
+				<option value="MQT Air-to-Air Refueling (AAR)">Air-to-Air Refueling (AAR)</option>
+				<option value="MQT Defensive Counter-Air (DCA)">Defensive Counter-Air (DCA)</option>
+								
+            </optgroup>
+			            <!-- TOPGUN Options -->
+            <optgroup label="TOPGUN SFTI">
+				<option value="TOPGUN Phase 1: Core Skills">Phase 1: Core Skills</option>
+                <option value="TOPGUN Phase 2: Advanced Tactics">Phase 2: Advanced Tactics</option>
+				<option value="TOPGUN Phase 3: SFARP/Integration">Phase 3: SFARP/Integration</option>
+	            </optgroup>
+			
+						            <!-- WIC Options -->
+            <optgroup label="WIC - Weapons Instructor Course">
+				<option value="WIC Phase 1: Core I – Platform-Specific Skills">Core I – Platform-Specific Skills</option>
+                <option value="WIC Phase 2: Core II – Advanced Tactics">Core II – Advanced Tactics</option>
+				<option value="WICINT Phase 3: Weapons School Integration">Phase 3: Weapons School Integration</option>
+	            </optgroup>
+		
+			            <!-- free -->
+            <optgroup label="MISSION">
+                <option value="MISSION">MISSION</option>
+            </optgroup>
+        </select>
+        <!-- sortie Field -->
+        <label for="sortie">sortie:</label>
+        <select id="sortie" name="sortie" required>
+            <option value="Not required">Not required</option>
+			<option value="Datacard">Datacard</option>
+            
+        </select>
+        <!-- Flight Plan Field -->
+        <label for="flightplan">Flight Plan:</label>
+        <select id="flightplan" name="flightplan" required>
+            <option value="Not required">Not required</option>
+			<option value="Datacard">Datacard</option>
+            
+        </select>
+
+        <!-- Meteo Field -->
+        <label for="meteo">WX:</label>
+        <select id="meteo" name="meteo" required>
+            <option value="1300L 230/02 9999 SCT180 35/14 Q1010 A29.85">Day VMC</option>
+            <option value="1830L 200/02 9999 SCT82 FEW210 28/16 Q1005 A29.68">Sunset/Night</option>
+            <option value="1300L 230/05 3500 -RA OVC60 OVC190 SCT340 25/23 Q1001 A29.56">Day IMC</option>
+        </select>
+		        <!-- loadout Field -->
+        <label for="loadout">Loadout:</label>
+        <textarea id="loadout" name="loadout" rows="1"></textarea>
+								        <!-- IFF Field -->
+        <label for="iff">IFF:</label>
+        <select id="iff" name="iff" required>
+            <option value="M1:11|M2:tail|M3:|M4:A">Training AF</option>
+			<option value="M1:13|M2:tail|M3:|M4:B">Training NAVY</option>
+			<option value="M1:42|M2:tail|M3:|M4:A">Strike</option>
+			<option value="M1:36|M2:tail|M3:|M4:A">CAP</option>
+			<option value="M1:24|M2:tail|M3:|M4:B">SEAD</option>
+			<option value="n/a">N/A</option>
+		</select>
+				
+		        <!-- bingo Field -->
+        <label for="bingo">Bingo:</label>
+        <textarea id="bingo" name="bingo" rows="1"></textarea>
+				        <!-- b/e Field -->
+        <label for="b/e">BullsEye:</label>
+        <textarea id="be" name="be" rows="1"></textarea>
+		        <!-- aa Field -->
+        <label for="aa">Tacan A/A:</label>
+        <textarea id="aa" name="aa" rows="1"></textarea>		
+		
+			
+				        <!-- ROE Field -->
+        <label for="roe">ROE:</label>
+        <select id="roe" name="roe" required>
+            <option value="Hold">Hold</option>
+			<option value="Free">Free</option>
+            <option value="Respond">Respond</option>
+			<option value="VID">VID</option>
+			<option value="IFF+hot">IFF+hot</option>
+            <option value="IFF+2hot">IFF+2hot</option>
+
+        </select>
+
+
+
+		
+		        <!-- SERVER Field -->
+        <label for="server">server:</label>
+        <select id="server" name="server" required>
+            <option value="UNSAFE FLIGHT server1">UNSAFE FLIGHT server</option>
+            <option value="4 STORMO server">4 STORMO server</option>
+			<option value="da confermare">da confermare</option>
+        </select><br><br>
+
+        <!-- Note Field -->
+        <label for="note">Note:</label>
+        <textarea id="note" name="note" rows="4"></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+	
+	
+	document.getElementById('type').addEventListener('change', function() {
+    const selectedDepArr = this.value;
+    const flightPlanSelect = document.getElementById('sortie');
+
+    // Mappa flight plan alle mappe
+    const flightPlansByMap = {
+        
+'PFT Basic Handling': ['Basic Handling Sortie 1', 'Basic Handling Sortie 2', 'Takeoff and Landing Sortie 3', 'Takeoff and Landing Sortie 4', 'Stall Recognition Sortie 5', 'Stall Recovery Sortie 6', 'Crosswind Landing Sortie 7', 'Crosswind Landing Sortie 8', 'Solo Handling Sortie 9', 'Solo Handling Sortie 10', 'Traffic Pattern Sortie 11', 'Traffic Pattern Sortie 12', 'Emergency Pattern Sortie 13', 'Emergency Pattern Sortie 14', 'Advanced Handling Sortie 15', 'Advanced Handling Sortie 16', 'Solo Advanced Handling Sortie 17', 'Maritime Navigation Sortie 18', 'Maritime Navigation Sortie 19', 'Basic Handling Checkride Sortie 20'],
+'PFT Basic Aerobatics': ['Basic Aerobatics Sortie 1', 'Basic Aerobatics Sortie 2', 'Spin Recovery Sortie 3', 'Spin Recovery Sortie 4', 'Advanced Aerobatics Sortie 5', 'Advanced Aerobatics Sortie 6', 'Solo Aerobatics Sortie 7', 'Solo Aerobatics Sortie 8', 'Aerobatics Maneuver Sortie 9', 'Aerobatics Checkride Sortie 10', 'High-Performance Aerobatics Sortie 11', 'Solo High-Performance Sortie 12', 'Maritime Aerobatics Sortie 13', 'Maritime Aerobatics Sortie 14', 'Aerobatics Final Sortie 15'],
+'PFT Instrument Flight': ['Basic Instrument Sortie 1', 'Basic Instrument Sortie 2', 'VOR Approach Sortie 3', 'VOR Approach Sortie 4', 'ILS Approach Sortie 5', 'ILS Approach Sortie 6', 'Simulated Low-Visibility Sortie 7', 'Simulated Low-Visibility Sortie 8', 'Holding Pattern Sortie 9', 'Holding Pattern Sortie 10', 'Cross-Country Instrument Sortie 11', 'Cross-Country Instrument Sortie 12', 'Precision Approach Sortie 13', 'Precision Approach Sortie 14', 'Non-Precision Approach Sortie 15', 'Non-Precision Approach Sortie 16', 'Maritime IFR Sortie 17', 'Maritime IFR Sortie 18', 'Instrument Checkride Sortie 19', 'Instrument Final Sortie 20'],
+'PFT Formation Flight': ['Two-Ship Formation Sortie 1', 'Two-Ship Formation Sortie 2', 'Rejoin Practice Sortie 3', 'Rejoin Practice Sortie 4', 'Tactical Formation Sortie 5', 'Tactical Formation Sortie 6', 'Lead Change Sortie 7', 'Lead Change Sortie 8', 'Solo Formation Sortie 9', 'Solo Formation Sortie 10', 'Four-Ship Formation Sortie 11', 'Four-Ship Rejoin Sortie 12', 'Tactical Lead Sortie 13', 'Formation Maneuver Sortie 14', 'Formation Checkride Sortie 15'],
+'PFT Night Flight': ['Night Familiarization Sortie 1', 'Night Familiarization Sortie 2', 'Night Navigation Sortie 3', 'Night Navigation Sortie 4', 'Night Landing Sortie 5', 'Night Landing Sortie 6', 'Maritime Night Sortie 7', 'Maritime Night Sortie 8', 'Night Checkride Sortie 9', 'Night Final Sortie 10'],
+'PFT Cross-Country Navigation': ['Short-Range Navigation Sortie 1', 'Short-Range Navigation Sortie 2', 'Long-Range Navigation Sortie 3', 'Long-Range Navigation Sortie 4', 'Maritime Navigation Sortie 5', 'Maritime Navigation Sortie 6', 'Solo Navigation Sortie 7', 'Solo Maritime Navigation Sortie 8', 'Cross-Country Checkride Sortie 9', 'Cross-Country Final Sortie 10'],
+		
+'IFT Jet Familiarization': ['Jet Handling Sortie 1', 'Jet Handling Sortie 2', 'Systems Familiarization Sortie 3', 'Systems Familiarization Sortie 4', 'Solo Jet Sortie 5', 'High-G Maneuver Sortie 6', 'Advanced Handling Sortie 7', 'Maritime Jet Sortie 8', 'Maritime Jet Sortie 9', 'Jet Familiarization Checkride Sortie 10'],
+'IFT Carrier Qualification (Field)': ['Field Carrier Landing (FCL) Sortie 1', 'FCL Sortie 2', 'FCL with Crosswinds Sortie 3', 'FCL with Crosswinds Sortie 4', 'Night FCL Sortie 5', 'Night FCL Sortie 6', 'Solo FCL Sortie 7', 'Solo FCL Sortie 8', 'FCL Checkride Sortie 9', 'FCL Final Sortie 10'],
+'IFT Instrument Flight': ['Jet IFR Sortie 1', 'Jet IFR Sortie 2', 'Precision Approach Sortie 3', 'Precision Approach Sortie 4', 'Non-Precision Approach Sortie 5', 'Non-Precision Approach Sortie 6', 'Low-Visibility IFR Sortie 7', 'Maritime IFR Sortie 8', 'Instrument Checkride Sortie 9', 'Instrument Final Sortie 10'],
+'IFT Basic Fighter Maneuvers (BFM)': ['Offensive BFM Sortie 1', 'Offensive BFM Sortie 2', 'Defensive BFM Sortie 3', 'Defensive BFM Sortie 4', 'Neutral BFM Sortie 5', 'Neutral BFM Sortie 6', 'Dynamic BFM Sortie 7', 'Dynamic BFM Sortie 8', 'BFM Checkride Sortie 9', 'BFM Final Sortie 10'],
+'IFT Tactical Formation': ['Two-Ship Tactical Sortie 1', 'Two-Ship Tactical Sortie 2', 'Lead-Wingman Sortie 3', 'Lead-Wingman Sortie 4', 'Four-Ship Formation Sortie 5', 'Four-Ship Formation Sortie 6', 'Tactical Rejoin Sortie 7', 'Tactical Rejoin Sortie 8', 'Tactical Formation Checkride Sortie 9', 'Tactical Formation Final Sortie 10'],
+'IFT Low-Level Navigation': ['Low-Level Route Sortie 1', 'Low-Level Route Sortie 2', 'Terrain Avoidance Sortie 3', 'Terrain Avoidance Sortie 4', 'Maritime Low-Level Sortie 5', 'Maritime Low-Level Sortie 6', 'Threat Evasion Sortie 7', 'Threat Evasion Sortie 8', 'Low-Level Checkride Sortie 9', 'Low-Level Final Sortie 10'],
+'IFT Basic Surface Attack': ['Visual Attack Sortie 1', 'Visual Attack Sortie 2', 'Dive Attack Sortie 3', 'Dive Attack Sortie 4', 'Radar-Aided Attack Sortie 5', 'Radar-Aided Attack Sortie 6', 'Multi-Target Attack Sortie 7', 'Multi-Target Attack Sortie 8', 'Surface Attack Checkride Sortie 9', 'Surface Attack Final Sortie 10'],
+
+'AFT Carrier Qualification (Shipboard)': ['Carrier Landing Sortie 1', 'Carrier Landing Sortie 2', 'Carrier Takeoff Sortie 3', 'Carrier Takeoff Sortie 4', 'Night Carrier Landing Sortie 5', 'Night Carrier Landing Sortie 6', 'Solo Carrier Sortie 7', 'Solo Carrier Sortie 8', 'Carrier Qualification Checkride Sortie 9', 'Carrier Qualification Final Sortie 10'],
+'AFT Advanced Fighter Maneuvers (AFM)': ['Offensive AFM Sortie 1', 'Offensive AFM Sortie 2', 'Defensive AFM Sortie 3', 'Defensive AFM Sortie 4', 'Neutral AFM Sortie 5', 'Neutral AFM Sortie 6', '2v1 AFM Sortie 7', '2v1 AFM Sortie 8', 'AFM Checkride Sortie 9', 'AFM Final Sortie 10'],
+'AFT Tactical Formation': ['Advanced Two-Ship Sortie 1', 'Advanced Two-Ship Sortie 2', 'Four-Ship Tactical Sortie 3', 'Four-Ship Tactical Sortie 4', 'Lead Transition Sortie 5', 'Lead Transition Sortie 6', 'Dynamic Formation Sortie 7', 'Dynamic Formation Sortie 8', 'Tactical Formation Checkride Sortie 9', 'Tactical Formation Final Sortie 10'],
+'AFT Low-Level Navigation': ['Advanced Low-Level Sortie 1', 'Advanced Low-Level Sortie 2', 'Maritime Low-Level Sortie 3', 'Maritime Low-Level Sortie 4', 'Threat Evasion Sortie 5', 'Threat Evasion Sortie 6', 'Low-Level Tactical Sortie 7', 'Low-Level Tactical Sortie 8', 'Low-Level Checkride Sortie 9', 'Low-Level Final Sortie 10'],
+'AFT Surface Attack (Simulated)': ['Advanced Visual Attack Sortie 1', 'Advanced Visual Attack Sortie 2', 'Radar-Guided Attack Sortie 3', 'Radar-Guided Attack Sortie 4', 'Dive Attack Sortie 5', 'Dive Attack Sortie 6', 'Multi-Target Attack Sortie 7', 'Multi-Target Attack Sortie 8', 'Surface Attack Checkride Sortie 9', 'Surface Attack Final Sortie 10'],
+'AFT Intercept': ['Basic Intercept Sortie 1', 'Basic Intercept Sortie 2', 'Radar Intercept Sortie 3', 'Radar Intercept Sortie 4', 'BVR Intercept Sortie 5', 'BVR Intercept Sortie 6', 'Multi-Ship Intercept Sortie 7', 'Multi-Ship Intercept Sortie 8', 'Intercept Checkride Sortie 9', 'Intercept Final Sortie 10'],
+'AFT Close Air Support (CAS)': ['FAC Coordination Sortie 1', 'FAC Coordination Sortie 2', 'Simulated CAS Sortie 3', 'Simulated CAS Sortie 4', 'Multi-Target CAS Sortie 5', 'Multi-Target CAS Sortie 6', 'Night CAS Sortie 7', 'Night CAS Sortie 8', 'CAS Checkride Sortie 9', 'CAS Final Sortie 10'],
+
+'FRS Aircraft Familiarization': ['F/A-18 Handling Sortie 1', 'F/A-18 Handling Sortie 2', 'Systems Familiarization Sortie 3', 'Systems Familiarization Sortie 4', 'Solo Handling Sortie 5', 'High-G Maneuver Sortie 6', 'Maritime Familiarization Sortie 7', 'Familiarization Checkride Sortie 8'],
+'FRS Emergency Procedures': ['Engine Failure Drill Sortie 1', 'Engine Failure Drill Sortie 2', 'Systems Malfunction Sortie 3', 'Systems Malfunction Sortie 4', 'Emergency Recovery Sortie 5', 'Emergency Checkride Sortie 6'],
+'FRS Carrier Operations': ['Carrier Landing Sortie 1', 'Carrier Landing Sortie 2', 'Carrier Takeoff Sortie 3', 'Carrier Takeoff Sortie 4', 'Night Carrier Landing Sortie 5', 'Night Carrier Landing Sortie 6', 'Solo Carrier Sortie 7', 'Solo Carrier Sortie 8', 'Carrier Checkride Sortie 9', 'Carrier Final Sortie 10'],
+'FRS Air-to-Air Engagements (Simulated)': ['1v1 BVR Engagement Sortie 1', '1v1 BVR Engagement Sortie 2', '2v1 Engagement Sortie 3', '2v1 Engagement Sortie 4', 'Simulated Missile Shot Sortie 5', 'Simulated Missile Shot Sortie 6', 'Dynamic Air-to-Air Sortie 7', 'Dynamic Air-to-Air Sortie 8', 'Air-to-Air Checkride Sortie 9', 'Air-to-Air Final Sortie 10'],
+'FRS Surface Attack (Practice/Live Munitions)': ['Single-Target Attack Sortie 1', 'Single-Target Attack Sortie 2', 'Dive Attack Sortie 3', 'Dive Attack Sortie 4', 'Multi-Target Attack Sortie 5', 'Multi-Target Attack Sortie 6', 'Live-Fire Attack Sortie 7', 'Live-Fire Attack Sortie 8', 'Surface Attack Checkride Sortie 9', 'Surface Attack Final Sortie 10'],
+'FRS Close Air Support (CAS)': ['FAC Coordination Sortie 1', 'FAC Coordination Sortie 2', 'Simulated CAS Sortie 3', 'Simulated CAS Sortie 4', 'Night CAS Sortie 5', 'Night CAS Sortie 6', 'CAS Checkride Sortie 7', 'CAS Final Sortie 8'],
+'FRS Air-to-Air Refueling (AAR)': ['Daytime AAR Sortie 1', 'Daytime AAR Sortie 2', 'Multi-Plug AAR Sortie 3', 'Night AAR Sortie 4', 'Night AAR Sortie 5', 'Maritime AAR Sortie 6', 'AAR Checkride Sortie 7', 'AAR Final Sortie 8'],
+		
+			
+'UPT Contact Flight': ['Basic Handling Sortie 1', 'Basic Handling Sortie 2', 'Takeoff and Landing Sortie 3', 'Takeoff and Landing Sortie 4', 'Stall Recovery Sortie 5', 'Stall Recovery Sortie 6', 'Crosswind Landing Sortie 7', 'Crosswind Landing Sortie 8', 'Solo Contact Sortie 9', 'Solo Contact Sortie 10', 'Traffic Pattern Sortie 11', 'Traffic Pattern Sortie 12', 'Emergency Pattern Sortie 13', 'Emergency Pattern Sortie 14', 'Day VFR Sortie 15', 'Day VFR Sortie 16', 'Advanced Handling Sortie 17', 'Advanced Handling Sortie 18', 'Solo VFR Sortie 19', 'Solo VFR Sortie 20', 'T-38C Transition Sortie 21', 'T-38C Handling Sortie 22', 'T-38C Stall Recovery Sortie 23', 'T-38C Crosswind Sortie 24', 'T-38C Solo Contact Sortie 25', 'T-38C Traffic Pattern Sortie 26', 'T-38C Emergency Pattern Sortie 27', 'T-38C Advanced Handling Sortie 28', 'T-38C Solo Contact Sortie 29', 'T-38C Advanced Handling Sortie 30'],
+'UPT Instrument Flight': ['Basic Instrument Navigation Sortie 1', 'Basic Instrument Navigation Sortie 2', 'VOR Approach Sortie 3', 'VOR Approach Sortie 4', 'ILS Approach Sortie 5', 'ILS Approach Sortie 6', 'Simulated Low-Visibility Sortie 7', 'Simulated Low-Visibility Sortie 8', 'Cross-Country Instrument Sortie 9', 'Cross-Country Instrument Sortie 10', 'Holding Pattern Sortie 11', 'Holding Pattern Sortie 12', 'Precision Approach Sortie 13', 'Precision Approach Sortie 14', 'Non-Precision Approach Sortie 15', 'Non-Precision Approach Sortie 16', 'T-38C Instrument Transition Sortie 17', 'T-38C VOR Approach Sortie 18', 'T-38C ILS Approach Sortie 19', 'T-38C Low-Visibility Sortie 20', 'T-38C Cross-Country Instrument Sortie 21', 'T-38C Holding Pattern Sortie 22', 'T-38C Precision Approach Sortie 23', 'T-38C Non-Precision Approach Sortie 24', 'T-38C Instrument Checkride Sortie 25'],
+'UPT Formation Flight': ['Two-Ship Formation Sortie 1', 'Two-Ship Formation Sortie 2', 'Rejoin Practice Sortie 3', 'Rejoin Practice Sortie 4', 'Tactical Formation Sortie 5', 'Tactical Formation Sortie 6', 'Lead Change Sortie 7', 'Lead Change Sortie 8', 'Solo Formation Sortie 9', 'Solo Formation Sortie 10', 'T-38C Two-Ship Formation Sortie 11', 'T-38C Rejoin Practice Sortie 12', 'T-38C Tactical Formation Sortie 13', 'T-38C Lead Change Sortie 14', 'T-38C Four-Ship Formation Sortie 15', 'T-38C Four-Ship Rejoin Sortie 16', 'T-38C Tactical Lead Sortie 17', 'T-38C Solo Formation Sortie 18', 'T-38C Formation Maneuver Sortie 19', 'T-38C Formation Checkride Sortie 20'],
+'UPT Aerobatics': ['Basic Aerobatics Sortie 1', 'Basic Aerobatics Sortie 2', 'Loop and Roll Sortie 3', 'Loop and Roll Sortie 4', 'Spin Recovery Sortie 5', 'Spin Recovery Sortie 6', 'Advanced Aerobatics Sortie 7', 'Advanced Aerobatics Sortie 8', 'Solo Aerobatics Sortie 9', 'Solo Aerobatics Sortie 10', 'T-38C Aerobatics Transition Sortie 11', 'T-38C Loop and Roll Sortie 12', 'T-38C Spin Recovery Sortie 13', 'T-38C Advanced Aerobatics Sortie 14', 'T-38C Aerobatics Checkride Sortie 15'],
+'UPT Night Flight': ['Night Familiarization Sortie 1', 'Night Familiarization Sortie 2', 'Night Navigation Sortie 3', 'Night Navigation Sortie 4', 'Night Landing Sortie 5', 'Night Landing Sortie 6', 'T-38C Night Familiarization Sortie 7', 'T-38C Night Navigation Sortie 8', 'T-38C Night Landing Sortie 9', 'T-38C Night Checkride Sortie 10'],
+'UPT Cross-Country Navigation': ['Short-Range Navigation Sortie 1', 'Short-Range Navigation Sortie 2', 'Long-Range Cross-Country Sortie 3', 'Long-Range Cross-Country Sortie 4', 'Multi-Leg Navigation Sortie 5', 'Multi-Leg Navigation Sortie 6', 'T-38C Short-Range Navigation Sortie 7', 'T-38C Long-Range Navigation Sortie 8', 'T-38C Multi-Leg Navigation Sortie 9', 'T-38C Cross-Country Checkride Sortie 10'],
+'UPT Advanced Formation': ['Tactical Two-Ship Sortie 1', 'Tactical Two-Ship Sortie 2', 'Four-Ship Formation Sortie 3', 'Four-Ship Formation Sortie 4', 'Dynamic Rejoin Sortie 5', 'Dynamic Rejoin Sortie 6', 'Lead Transition Sortie 7', 'Lead Transition Sortie 8', 'Tactical Four-Ship Sortie 9', 'Tactical Four-Ship Sortie 10', 'Advanced Rejoin Sortie 11', 'Advanced Rejoin Sortie 12', 'Tactical Lead Sortie 13', 'Tactical Lead Sortie 14', 'Advanced Formation Checkride Sortie 15'],
+'UPT Low-Level Navigation': ['Low-Level Route Sortie 1', 'Low-Level Route Sortie 2', 'Terrain Avoidance Sortie 3', 'Terrain Avoidance Sortie 4', 'Low-Level Navigation Sortie 5', 'Low-Level Navigation Sortie 6', 'Advanced Low-Level Sortie 7', 'Advanced Low-Level Sortie 8', 'Low-Level Solo Sortie 9', 'Low-Level Solo Sortie 10', 'Terrain-Following Sortie 11', 'Terrain-Following Sortie 12', 'Low-Level Cross-Country Sortie 13', 'Low-Level Cross-Country Sortie 14', 'Low-Level Checkride Sortie 15'],
+
+'IFF Basic Fighter Maneuvers (BFM)': ['Offensive BFM Sortie 1', 'Offensive BFM Sortie 2', 'Defensive BFM Sortie 3', 'Defensive BFM Sortie 4', 'High Yo-Yo Maneuver Sortie 5', 'Dynamic BFM Sortie 6', 'Neutral Engagement Sortie 7'],
+'IFF Tactical Formation': ['Two-Ship Tactical Sortie 1', 'Two-Ship Tactical Sortie 2', 'Lead-Wingman Coordination Sortie 3', 'Tactical Rejoin Sortie 4', 'Formation Maneuver Sortie 5'],
+'IFF Low-Level Tactical Navigation': ['Low-Level Route Sortie 1', 'Threat Evasion Navigation Sortie 2', 'Low-Level Tactical Sortie 3', 'Advanced Low-Level Tactical Sortie 4'],
+'IFF Air-to-Air Engagements (1v1)': ['Basic 1v1 Engagement Sortie 1', 'Radar-Guided Engagement Sortie 2', 'Simulated Missile Shot Sortie 3', 'Dynamic 1v1 Sortie 4', '1v1 Checkride Sortie 5'],
+'IFF Basic Surface Attack': ['Visual Target Attack Sortie 1', 'Simulated Bomb Drop Sortie 2', 'Radar-Aided Attack Sortie 3', 'Surface Attack Checkride Sortie 4'],
+'IFF Intercept': ['Basic Intercept Sortie 1', 'Radar Intercept Sortie 2', 'BVR Intercept Sortie 3', 'Intercept Checkride Sortie 4'],
+
+'B-Course Aircraft Familiarization': ['F-16 Handling Sortie 1', 'F-16 Handling Sortie 2', 'Systems Familiarization Sortie 3', 'Systems Familiarization Sortie 4', 'Solo Handling Sortie 5', 'Advanced Maneuver Sortie 6', 'Cross-Country Familiarization Sortie 7', 'F-16 Familiarization Checkride Sortie 8'],
+'B-Course Emergency Procedures': ['Engine Failure Drill Sortie 1', 'Engine Failure Drill Sortie 2', 'Systems Malfunction Sortie 3', 'Systems Malfunction Sortie 4', 'Emergency Recovery Sortie 5', 'Emergency Procedures Checkride Sortie 6'],
+'B-Course Instrument Qualification': ['F-16 Instrument Sortie 1', 'F-16 Instrument Sortie 2', 'Precision Approach Sortie 3', 'Precision Approach Sortie 4', 'Low-Visibility Navigation Sortie 5', 'Low-Visibility Navigation Sortie 6', 'IFR Cross-Country Sortie 7', 'Instrument Qualification Checkride Sortie 8'],
+'B-Course Basic Fighter Maneuvers (BFM)': ['Offensive BFM Sortie 1', 'Offensive BFM Sortie 2', 'Defensive BFM Sortie 3', 'Defensive BFM Sortie 4', 'Neutral BFM Sortie 5', 'Neutral BFM Sortie 6', 'Dynamic BFM Sortie 7', 'Dynamic BFM Sortie 8', 'High-Intensity BFM Sortie 9', 'BFM Checkride Sortie 10'],
+'B-Course Tactical Formation': ['Two-Ship Tactical Sortie 1', 'Two-Ship Tactical Sortie 2', 'Four-Ship Formation Sortie 3', 'Four-Ship Formation Sortie 4', 'Tactical Lead Change Sortie 5', 'Tactical Lead Change Sortie 6', 'Dynamic Formation Sortie 7', 'Tactical Formation Checkride Sortie 8'],
+'B-Course Low-Level Navigation': ['Low-Level Route Sortie 1', 'Low-Level Route Sortie 2', 'Terrain Masking Sortie 3', 'Terrain Masking Sortie 4', 'Threat Evasion Navigation Sortie 5', 'Threat Evasion Navigation Sortie 6', 'Low-Level Tactical Sortie 7', 'Low-Level Navigation Checkride Sortie 8'],
+'B-Course Surface Attack (Practice/Live Munitions)': ['Single-Target Bombing Sortie 1', 'Single-Target Bombing Sortie 2', 'Dive Bombing Sortie 3', 'Dive Bombing Sortie 4', 'Multi-Target Attack Sortie 5', 'Multi-Target Attack Sortie 6', 'Live-Fire Bombing Sortie 7', 'Live-Fire Bombing Sortie 8', 'Simulated Threat Attack Sortie 9', 'Surface Attack Checkride Sortie 10'],
+'B-Course Strafing Run': ['Cannon Strafing Sortie 1', 'Cannon Strafing Sortie 2', 'Low-Altitude Strafing Sortie 3', 'Low-Altitude Strafing Sortie 4', 'Live-Fire Strafing Sortie 5', 'Strafing Checkride Sortie 6'],
+'B-Course Air-to-Air Engagements (Simulated)': ['1v1 BVR Engagement Sortie 1', '1v1 BVR Engagement Sortie 2', '2v1 Engagement Sortie 3', '2v1 Engagement Sortie 4', 'Simulated Missile Launch Sortie 5', 'Simulated Missile Launch Sortie 6', 'Dynamic Air-to-Air Sortie 7', 'Air-to-Air Checkride Sortie 8'],
+'B-Course Basic Close Air Support (CAS)': ['FAC Coordination Sortie 1', 'FAC Coordination Sortie 2', 'Simulated CAS Sortie 3', 'Inert Bomb CAS Sortie 4', 'CAS Checkride Sortie 5'],
+'B-Course Air-to-Air Refueling (AAR)': ['Daytime AAR Sortie 1', 'Daytime AAR Sortie 2', 'Multi-Plug AAR Sortie 3', 'Night AAR Sortie 4'],
+
+'MQT Squadron Orientation Flight': ['Local Airspace Sortie 1', 'Squadron Procedures Sortie 2', 'Squadron Orientation Checkride Sortie 3'],
+'MQT Advanced Low-Level Navigation': ['Theater-Specific Route Sortie 1', 'Contested Navigation Sortie 2', 'Dynamic Low-Level Sortie 3'],
+'MQT Advanced Carrier Operations': ['Operational Carrier Sortie 1', 'Night Carrier Sortie 2', 'Complex Carrier Sortie 3', 'Carrier Checkride Sortie 4'],
+'MQT Air-to-Air Combat': ['Multi-Ship Engagement Sortie 1', 'BVR Combat Sortie 2', 'Dynamic Air-to-Air Sortie 3'],
+'MQT Close Air Support (CAS)': ['JTAC Coordination Sortie 1', 'Dynamic CAS Sortie 2', 'Night CAS Sortie 3'],
+'MQT Air-to-Ground Strike': ['Precision Strike Sortie 1', 'Multi-Target Strike Sortie 2', 'Live-Fire Strike Sortie 3'],
+'MQT Suppression of Enemy Air Defenses (SEAD)': ['Simulated SEAD Sortie 1', 'HARM Missile Drill Sortie 2'],
+'MQT Night Operations': ['Night Navigation Sortie 1', 'Night Attack Sortie 2', 'NVG Engagement Sortie 3'],
+'MQT Large Force Exercise (LFE)': ['Multi-Ship LFE Sortie 1', 'Integrated LFE Sortie 2'],
+'MQT Air-to-Air Refueling (AAR)': ['Operational AAR Sortie 1', 'Night AAR Sortie 2', 'Mission-Integrated AAR Sortie 3'],
+'MQT Defensive Counter-Air (DCA)': ['Airspace Defense Sortie 1', 'Intercept DCA Sortie 2'],		
+
+'TOPGUN Phase 1: Core Skills': ['F/A-18 Systems Familiarization 1', 'F/A-18 Systems Familiarization 2', 'Carrier-Based BFM 3', 'BFM 4', 'Carrier-Based BVR Intercept 5', 'BVR Intercept 6', 'Carrier-Based Precision Strike 7', 'Night Carrier Ops 8', 'Night Precision Strike 9'],
+'TOPGUN Phase 2: Advanced Tactics': ['2v1 BFM 10', '2v1 BFM 11', '2v2 Air Combat 12', 'Carrier-Based SEAD 13', 'SEAD 14', 'Carrier-Based CAS 15', 'Night CAS 16', 'Low-Level Strike 17', 'Low-Level Strike 18', 'Advanced Tactics Checkride 19'],
+'TOPGUN Phase 3: SFARP/Integration': ['SFARP Mission Planning 20', 'SFARP Air Superiority 21', 'SFARP Night Air Superiority 22', 'SFARP SEAD Mission 23', 'SFARP CAS Mission 24', 'SFARP Night SEAD 25', 'SFARP DCA Mission 26', 'SFARP OCA Mission 27', 'SFARP OCA Mission 28', 'SFARP Complex LFE 29', 'SFARP Capstone 30'],
+
+'WIC Phase 1: Core I – Platform-Specific Skills': ['F-16 Systems Familiarization 1', 'F-16 Systems Familiarization 2', 'Advanced BFM 3', 'Advanced BFM 4', 'BVR Intercept 5', 'BVR Intercept 6', 'Precision Strike 7', 'Night BFM 8', 'Night Precision Strike 9', 'Core I Checkride'],			
+'WIC Phase 2: Core II – Advanced Tactics': ['2v1 BFM 11', '2v1 BFM 12', '2v2 Air Combat 13', '2v2 Air Combat 14', 'SEAD Mission 15', 'SEAD Mission 16', 'CAS Mission 17', 'Night CAS Mission 18', 'Low-Level SEAD 19', 'Low-Level SEAD 20', 'Core II Checkride 21'],	
+'WICINT Phase 3: Weapons School Integration': ['WSINT Mission Planning 22', 'WSINT Air Superiority 23', 'WSINT Night Air Superiority 24', 'WSINT SEAD Mission 25 ', 'WSINT CAS Mission 26 ', 'WSINT Night SEAD 27', 'WSINT DCA Mission 28', 'WSINT OCA Mission 29', 'WSINT Complex LFE 30', 'WSINT Complex LFE 31', 'WSINT Capstone 32', 'WSINT Capstone 33'],	
+
+
+        // Aggiungi altre mappe qui
+    };
+
+    // Determina la mappa selezionata
+    const mapKey = Object.keys(flightPlansByMap).find(map => selectedDepArr.includes(map));
+    const relevantFlightPlans = flightPlansByMap[mapKey] || [];
+
+    // Aggiorna il menu a tendina dei flight plan
+    flightPlanSelect.innerHTML = '<option value="Not required">Not required</option>'; // Reset
+    relevantFlightPlans.forEach(plan => {
+        const option = document.createElement('option');
+        option.value = plan;
+        option.textContent = plan;
+        flightPlanSelect.appendChild(option);
+    });
+});		
+	
+	
+	
+	
+	
+	
+	document.getElementById('depArr').addEventListener('change', function() {
+    const selectedDepArr = this.value;
+    const flightPlanSelect = document.getElementById('flightplan');
+
+    // Mappa flight plan alle mappe
+    const flightPlansByMap = {
+        'SINAI MAP': ['NEV1 patrol border sud', 'NEV2 low sinai saudi', 'NEV3 low jordan1', 'NEV4 patrol nord', 'NEV5 patrol border West', 'MEL1 patrol border nord', 'MEL2 patrol sinai', 'MEL3 suez SW', 'MEL4 patrol border E', 'MEL5 patrol suez', 'INS1 suez cap', 'INS2 giza suez', 'INS3 AA range', 'INS4 red sea cap', 'INS5 north coast cap', 'WSH1 N israel CAP', 'WSH2 gaza/rmn/nvt', 'WSH3 sea N patrol', 'WSH4 patrol W', 'WSH5', 'Datacard'],
+        'SYRIA MAP': ['Datacard'],
+		'PERSIAN GULF MAP': ['BND1-islands tour', 'BND2-E jask', 'BND3-north kerman', 'BAN4-range', 'MHD1-low SE', 'MHD2-low E coast', 'MHD3-north tour', 'MHD4-south tour', 'MHD5-range', 'DAF1-south', 'DAF2-E coast', 'DAF3-range', 'DAF4-oman', 'SHZ1-south coast', 'SHZ2-E kerman jiroft', 'SHZ3-north tour', 'WHS1-range north', 'Datacard'],
+		'KOLA MAP': ['Datacard', 'BAR1-west', 'BAR2-north', 'BAR3-south', 'D468-SENJA', 'D477 BVR/SHIP', 'RANGE SETERMOEN'],
+		'CAUCASUS MAP': ['KUT1 cap south west', 'KUT2 cap south est', 'KUT3 air refuel', 'KUT4 bbq', 'KUT5 cap north west', 'KUT6 zona alpha1/alpha2', 'KUT7 cap north est', 'KUT8 poligono a/g', 'KUT9 zona bravo1/2', 'KUT10 zona anti ship', 'KUT11 touch and go vaziani', 'Datacard'],
+		'IRAQ MAP': ['Datacard'],
+		'NEVADA MAP': ['Datacard'],
+		'GERMANY MAP': ['Datacard'],
+		'MARIANAS MAP': ['Datacard'],	
+		'AFGANISTAN MAP': ['Datacard'],			
+		'SOUTH ATLANTIC MAP': ['Datacard'],	
+        // Aggiungi altre mappe qui
+    };
+
+    // Determina la mappa selezionata
+    const mapKey = Object.keys(flightPlansByMap).find(map => selectedDepArr.includes(map));
+    const relevantFlightPlans = flightPlansByMap[mapKey] || [];
+
+    // Aggiorna il menu a tendina dei flight plan
+    flightPlanSelect.innerHTML = '<option value="Not required">Not required</option>'; // Reset
+    relevantFlightPlans.forEach(plan => {
+        const option = document.createElement('option');
+        option.value = plan;
+        option.textContent = plan;
+        flightPlanSelect.appendChild(option);
+    });
+});		
+	
+	
+	
+	
+	
+	
+	
+        document.getElementById('discordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const datetime = document.getElementById('datetime').value;
+            const depArr = document.getElementById('depArr').value;
+            const aircraft = document.getElementById('aircraft').value;
+			const callsign = document.getElementById('callsign').value;
+            const type = document.getElementById('type').value; // Original selected option value
+            const sortie = document.getElementById('sortie').value;
+			const flightplan = document.getElementById('flightplan').value;
+            const meteo = document.getElementById('meteo').value;
+			const loadout = document.getElementById('loadout').value;
+			const bingo = document.getElementById('bingo').value;
+			const aa = document.getElementById('aa').value;
+			const be = document.getElementById('be').value;
+			const roe = document.getElementById('roe').value;
+			const iff = document.getElementById('iff').value;
+			const server = document.getElementById('server').value;
+            const note = document.getElementById('note').value;
+
+            // Mapping mission types to their full column details in a vertical format
+            const additionalTexts = {
+			//	"MQT Defensive Counter-Air (DCA)": "\n-Preflight/startup\n-Taxi/takeoff\n-uscita ATZ\n-Handling in volo\n-rientro ATZ\n-touch and go / landing\n-Taxi/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+
+			    "IQT0-touchngo": "\n-Preflight/startup\n-Taxi/takeoff\n-uscita ATZ\n-Handling in volo\n-rientro ATZ\n-touch and go / landing\n-Taxi/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+                "IQT1-nav vmc": "\n-Preflight/startup\n-Taxi/takeoff\n-Nav VFR\n-Nav wyp\n-Nav TACAN\n-RTB straight in\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nVFR rule,cruise altitude, ATC airspace, TCN, fuel check, alfa check, bingo fuel\n",
+                "IQT2-formation day": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin\n-Nav VFR/WYP\n-Formation and change formation\n-RTB overhead\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nvisual/TCN rejoin, formation type, reference, tactical turn 45/90/180 hook/shackle, overehead\n",
+                "IQT3-nav low alt": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin to ops area\n-Low alt in TRAIL\n-Rejoin\n-RTB overhead\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nRAT, low altitude <500ft AGL, speed, scan,KIO Knock It Off call, recovery climb, emg jettison\n",
+                "IQT4-nav night": "\n-Preflight/startup\n-Taxi/takeoff\n-Nav nightVFR\n-Nav wyp\n-Nav TACAN\n-RTB straight in\n-Taxi/shutdown\n\n**Loadout:** 2aim9+NVG\n\nvisual/TCN rejoin, NVG, FLIR, night VFR rules\n",
+                "IQT5-formation night": "\n-Preflight/startup\n-Taxi/takeoff\n-Formation/cambi\n-RTB straight in\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\naircraft lights, a/a radar help, link16, night formation lights/reference, overehead\n",
+                "IQT6-ifr": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin to ops area\n-IMC flight\n-QDM QDR\n-TCN approach\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nHUD, ADI, HSI, course sel, no HUD/partial panel, climb/descent/turn in IMC, TCN randevouz\n",
+                "IQT7-ifr xcountry": "\n-Preflight/startup\n-Taxi/takeoff\n-SID/STAR and IFR Nav\n-RTB tcn/ils approach\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\nRadarAssistedDeparture RAT, IFR rule, IFR charts\n",
+                "IQT8-AAR day": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin to AAR zone\n-Rejoin tanker\n-AAR practice\n-AAR exit\n-RTB overhead\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nARIP,ATC radar vector, observation/reform area, plug in exercise 200-500lbs\n",
+                "IQT9-AAR night": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin to AAR zone\n-Rejoin tanker\n-AAR practice\n-AAR exit\n-Taxi/shutdown\n\n**Loadout:** 2aim9+NVG\n\nIQT8 required, night ops, lights, NVG use\n",
+                "IQT10-system": "\n-Preflight/startup\n-cross-bleedstart\n-Taxi/takeoff\n-Rejoin to OPS zone\n-climb F250\n-APU out of envelope - no start\n-L/R windmilling relight\n-at F100 APU/JFS or cross-bleed relight\n-RTB\n-F100-150 overhead and simulated 1ENG flameout\n-S/E go around/full stop\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nJET engine, APU(aux power unit)/JFS(jet fuel start), envelope relight (alt/speed), chase flight\n",
+
+				
+				"WS1-a/a radar tpod": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to ops area\n-RWS/TWS mode\n-IFF system\n-TPOD and VID\n-traffic interception\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD+center tank\n\nEOR, a/a radar mode RWS TWS, IFF, TPOD a/a use\n",
+                "WS2-a/a gun": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to A/A range\n-Radar ID\n-Aim9 deploy\n-Gun practice\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD\n\nEOR, tactical formation, aim9 performance and deploy, gun a/a, BDA battle damage assess\n",
+                "WS3-a/a fox2 IR": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to A/A range\n-Radar ID\n-Aim9 deploy\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD\n\nEOR, tactical formation, aim9/R60/R73/R74/PL5/R55/magic2 performance and deploy, gun a/a, BDA battle damage assess\n",
+ 				"WS4-a/a fox1 semi active": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to A/A range\n-Radar ID\n-Aim7 deploy\n-Butterfly set\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2aim7+TPOD\n\nEOR, tactical formation, aim7/R27/S530 performance and deploy, gun a/a, BDA battle damage assess\n",
+              	"WS5-a/a fox3 active radar": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to A/A range\n-Radar ID\n-Aim120 deploy\n-Butterfly set\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD\n\nEOR, tactical formation, aim120/aim54/R77/SD10 performance and deploy, gun a/a, BDA battle damage assess\n",
+                "WS6-a/g radar tpod": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and TPOD track\n-Tpod setting/ LST\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+TPOD\n\nEOR,TPOD a/g, LST, HMD\n",
+                "WS7-a/g gun/rockets": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and dry pass\n-Strafing circuit practice\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2rockets pod+TPOD\n\nEOR, a/g range familiarization, strafing circuit, delay 30sec to engage, VID and dry passage, gun a/g use, rockets use BDA battle damage assess\n",
+                "WS8-a/g LD bomb": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and dry pass\n-Drop practice CCIP/CCRP\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4mk82LD+TPOD\n\nEOR, a/g range familiarization, bombing circuit, delay 30sec to engage, VID and dry passage, CCIP/CCRP, minimum release altitude, BDA battle damage assess\n",
+                "WS9-a/g LGB": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and Tpod track\n-Drop practice LASER/LST\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4LGB12+TPOD\n\nEOR, a/g range familiarization, bombing circuit, delay 30sec to engage, VID and dry passage, AUTO/CCIP/CCRP, minimum release altitude, BDA battle damage assess\n",
+                "WS10-JDAM/JSAW": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt\n-Tpod track or by DTC\n-Drop practice\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4GBU82+TPOD\n\nEOR, a/g range familiarization, bombing circuit, delay 30sec to engage, VID and dry passage, AUTO/CCRP, minimum release altitude, BDA battle damage assess\n",
+                "WS11-a/g HD/CBU bomb": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and Tpod track\n-IP run in low alt to tgt\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4mk82HD+TPOD\n\nEOR, a/g range familiarization, IP run, delay 30sec to engage, VID and dry passage, CCIP/CCRP, release altitude and speed, BDA battle damage assess\n",
+                "WS12-a/g agm65": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and Tpod track\n-IP run to tgt\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4AGM65+TPOD\n\nEOR, a/g range familiarization, IP run, agm65 type, tpod transfer, direct agm track, BDA battle damage assess\n",
+                "WS13-a/g anti radiation": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-Tgt search and track/precision\n-TGT engage\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2AGM88+TPOD+harm pod\n\nEOR, AGM88 performance and deploy mode, harm pod use, tracking and precision, BDA battle damage assess\n",
+                "WS14-a/g anti ship": "\n-Preflight/startup\n-Taxi/catapult\n-Case1 departure\n-Nav to ops area\n-A/G sea radar\n-Harpoon setting\n-Tgt engage\n-RTB case1\n-Trap\n-Taxi/shutdown\n\n**Loadout:** 2aim9+2AGM84center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each, radar a/g sea, agm84 performance and deploy mode, carrier deck taxi, AAR recovery tanker available\n",
+
+				"MQT0-a/a BFM": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to ops area\n-G-warm up\n\n-PERCH set:\n -line abrest 1nm 350kts\n -45 hard left, 40 right Aspect\n -extended trail cone (1000-3000ft)\n -engine set (2 egt/rpm maggiore di 1)\n -manouvering\n -KIO reset\n -offensive, defensive, reversal\n\n-BUTTERFLY set:\n -line abreast 1nm 350kts\n -open 20/20 MIL\n -20sec padlock Fight ON\n -2, 1 circle,\n -KIO reset\n-Rejoin\n-RTB\n\n**Loadout:** 2aim9\n\nBFM basic fighter manouvers,protective bubble 1000ft, hard deck, lead pure lag, offensive defensive, reversal, butterfly set\n",
+				"MQT1-a/a ACM": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to ops area\n-G-warm up\n-2v1 o 2v2 as planned\n-Engaged-Press/Unable, separate call and reset\n-Rejoin\n-RTB\n\n**Loadout:** 2aim9+TPOD\n\nACM air combat manouvers, ENGAGED/SUPPORT(press/unable) role, leader overide decision, separate (hdg,alt), hard deck, protective bubble\n",
+				"MQT2-a/a intercept VID": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to ops area - TOI (track of interest)\n-Radar search and track\n-IFF system\n-TPOD and VID\n-traffic interception: SSO (single side offset) o Bracket\n-high AA, <10 nm AA60L/R, low AA\n-approach to TOI\n-if required radio/visual contact with TOI\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD+center tank\n\nEOR, a/a radar mode RWS TWS, TPOD a/a use, IFF, simulated intercept procedure with com, CGI/AWACS\n",
+				"MQT3-a/a BVR tactics": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to A/A range - OPS area\n-Tactical engagement\n-Simulated fox3/2 deploy\n-Knock it off call for reset\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD\n\nEOR,WEZ, MAR, MOR (DOR), tactics: SKATE, SHORT SKATE, BANZAI, GRINDER, PINCER, BEAM, CRANK, BDA battle damage assess, CGI/AWACS\n",
+				"MQT4-a/a scramble": "\n-Preflight/startup\n-QRA/eor/takeoff\n-Nav to ops area - TOI (track of interest)\n-Radar search and track\n-IFF system\n-TPOD and VID\n-traffic interception\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD+center tank\n\nEOR, QUICK takeoff/climb, a/a radar mode RWS TWS, TPOD a/a use, IFF, simulated intercept procedure with com, CGI/AWACS\n",
+                "MQT5-a/g tactics": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range - OPS area\n-VID tgt and Tpod track (if needed)\n-IP run to target\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4mk82HD+TPOD\n\nEOR, a/g range familiarization,IP run, POP UP WING OVER, POP UP OFFSET single and group attack, LOFT, BDA battle damage assess\n",
+
+
+				"CQ1-navy circuit onshore": "\n-Preflight/startup\n-Taxi/takeoff\n-Navy circuit practice\n-RTB overhead\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\n800ft navy circuit, AOA, hook up for field ops\n",
+                "CQ2-deploy to CV": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin to CVN\n-Case1 arrival\n-Navy circuit practice\n-WaveOff/bolter\n-Trap\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\n800ft navy circuit, AOA, MLW maximum landing weight,carrier deck taxi, AAR recovery tanker available\n",
+                "CQ3-case1": "\n-Preflight/startup\n-Taxi/catapult\n-Case1 departure\n-Navy circuit practice\n-WaveOff/bolter\n-3 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each, initial 800ft/350kts, navy circuit, carrier deck taxi, AAR recovery tanker available\n",
+                "CQ4-case2": "\n-Preflight/startup\n-Taxi/catapult\n-Case2 departure\n-Case2 arrival\n-1 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase2 departure: straight 1500ft/300kts 10nm, AOA, case2 arrival 5nm stack 1000ft each,carrier deck taxi, AAR recovery tanker available\n",
+                "CQ5-case3": "\n-Preflight/startup\n-Taxi/catapult\n-Case3 departure\n-Case3 arrival\n-1 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase3 departure: straight 3000ft/300kts 10nm, AOA, case3 arrival 5nm stack 1000ft each,carrier deck taxi, AAR recovery tanker available\n",
+                "CQ6-case3 imc": "\n-Preflight/startup\n-Taxi/catapult\n-Case3 departure\n-Case3 arrival\n-1 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase3 departure: straight 3000ft/300kts 10nm, AOA, case3 arrival 5nm stack 1000ft each,carrier deck taxi, AAR recovery tanker available\n",
+                "CQ7-cq emg1": "\n-Preflight/startup\n-Taxi/catapult\n-Cat1 departure\n-Simulated Engine out\n-Climb and relight\n-AAR on recovery tanker\n-Case1 arrival single engine\n-Waveoff single engine\n-1 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each, S/E single engine procedure for climb out, ENG relight, S/E setting for landing FLAPS HALF, carrier deck taxi, AAR recovery tanker available\n",
+                "CQ8-scramble vid": "\n-Preflight/startup\n-Taxi/catapult in coppia\n-Case1 departure\n-Nav to ops area\n-A/A, A/G radar\n-Tpod and VID ship/aircraft\n-RTB case1\n-Trap\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center+TPOD tank\n\ncase1 departure: 20/20 500ft/300kts 10nm, AOA, case1 arrival 5nm stack 1000ft each,radar a/g sea, a/a, TPOD use for VID, VID aircraft or ship, carrier deck taxi, AAR recovery tanker available\n",
+                "CQ9-harpoon": "\n-Preflight/startup\n-Taxi/catapult\n-Case1 departure\n-Nav to ops area\n-A/G sea radar\n-Harpoon setting\n-Tgt engage\n-RTB case1\n-Trap\n-Taxi/shutdown\n\n**Loadout:** 2aim9+2AGM84center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each, radar a/g sea, agm84 performance and deploy mode, carrier deck taxi, AAR recovery tanker available\n",
+				"CQ10-CV ops": "\n-Preflight/startup\n-Taxi/catapult ziplip\n-Case1 departure\n-Nav to ops area\n-duty as planned\n-RTB case1 ziplip\n-Trap\n-Taxi/shutdown\n\n**Loadout:** 2aim9+2aim120+TPOD+center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each, carrier deck taxi, AAR recovery tanker available\n",
+                "CQR-carrier qualification recency": "\n-Preflight/startup\n-Taxi/catapult\n-Case1 departure\n-AAR on recovery tanker\n-3 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each,carrier deck taxi, AAR recovery tanker available\n",
+				
+				"HELO1-airport ops / handling": "\n-Preflight/startup\n-Hovercheck\n-Taxi\n-Handling on runway + side\n-acceleration and deceleration\n-Landing std/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+				"HELO2-autorotazione": "\n-Preflight/startup\n-Taxi\n-T/O standard\n-Traffic pattern\n-Go-around\n-Autorotation\n-Slide Landing/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+				"HELO3-takeoff": "\n-Preflight/startup\n-Taxi\n-T/O rapido\n-T/O ripido\n-T/O vertical\n-Landing std/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+				"HELO4-formation": "\n-Preflight/startup\n-Taxi\n-T/O std\n-nav to ops area\n-formazioni/cambi\n-RTB overhead\n-Landing std/shutdown\n\n**Loadout:** clean\n\nvisual/TCN rejoin, formation type, reference, tactical turn\n",
+				"HELO5-nav vmc": "\n-Preflight/startup\n-Taxi\n-T/O std\n-VFR navigation WYP/VOR/NDB\n-RTB overhead\n-Landing std/shutdown\n\n**Loadout:** clean\n\nVFR rule,cruise altitude, ATC airspace, TCN, fuel check, alfa check, bingo fuel\n",
+				"HELO6-out-field ops": "\n-Preflight/startup\n-Taxi\n-T/O std\n-rejoin to ops area\n-Field consideration\n-Simulated Emergency landing\n-RTB overhead\n-Landing std/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+				"HELO7-Night ops": "\n-Preflight/startup\n-NVG setting\n-Taxi\n-T/O std\n-VFR navigation WYP/VOR/NDB\n-Out-field landing\n-RTB overhead\n-Landing std/shutdown\n\n**Loadout:** clean\n\nvisual/TCN rejoin, NVG, FLIR, night VFR rules\n",
+
+				
+            };
+
+            // Get the additional text for the selected Mission in vertical format
+            const additionalText = additionalTexts[type] || "additional details in training file.";
+            const modifiedType = `${type}\n${additionalText}`; // Ensure vertical format with newline
+
+            // Formatting the date and time to add a space before the time
+            const formattedDatetime = datetime.replace("T", " ");
+
+            // Use modifiedType in the message
+            const message = `**Date/Time (UTC):** ${formattedDatetime} - **Dep:** ${depArr}\n**Aircraft:** ${aircraft} - **Callsign:** ${callsign}\n**Wx:** ${meteo}\n**Sortie:** ${sortie} - **Mission:** ${modifiedType}\n**Loadout:** ${loadout} - **Roe:** ${roe}\n**Bingo:** ${bingo} - **Bullseye:** ${be} - **A/A:** ${aa}  - **IFF:** ${iff}\n**Flight Plan:** ${flightplan} - **server:** ${server}\n\n**Note:** ${note}`;
+
+        // Send the message to 4 Stormo Discord
+        fetch('https://discord.com/api/webhooks/1320392615245648003/4kfbJdcMuR2w_rUUtPJ5069DuJD3aKfSbkUvpJS2sVY0HLcfvKZ95qlXDZEYDmtMlmGu', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                content: message
+            }),
+        }).then(response => {
+            if (response.ok) {
+                alert("Mission posted successfully!");
+            } else {
+                alert("Error posting mission.");
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            alert("Error posting mission.");
+        });
+		
+	// Send the message to UNSAFE Discord
+            fetch('https://discord.com/api/webhooks/1417482751069786263/FcyaOo7G3g7vknosi0Ub5W5VCabnifj1_Ot9QVS1c8eIRqSXup7JGPw0ZMDt0f7KSnu7', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                content: message
+            }),
+        }).then(response => {
+            if (response.ok) {
+                alert("Mission posted successfully!");
+            } else {
+                alert("Error posting mission.");
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            alert("Error posting mission.");
+        });
+    });
+</script>
+</body>
+</html>
