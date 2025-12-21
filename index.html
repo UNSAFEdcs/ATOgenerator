@@ -219,6 +219,7 @@
 		<!-- JET Options -->
 		<optgroup label="JET">
 			<option value="A-4E-C">A4E-C</option>
+			<option value="A-6E">A-6E</option>
 			<option value="A-7E">A-7E</option>
             <option value="A-10C">A-10C</option>
 			<option value="AJS-37">AJ-S37</option>
@@ -269,6 +270,7 @@
 			<option value="A-29B Tucano">A-29B Tucano</option>
 			<option value="C-101CC/EB">C-101CC/EB</option>
 			<option value="MB-339A">MB-339A</option>
+			<option value="MIG-29UB">MIG-29UB</option>
 			<option value="F1BE">F1BE</option>
 			<option value="L-39C/ZA">L-39C/ZA</option>
 			<option value="OV-10A">OV-10A</option>
@@ -775,8 +777,8 @@
             // Formatting the date and time to add a space before the time
             const formattedDatetime = datetime.replace("T", " ");
 
-            // Use modifiedType in the message
-            const message = `**Date/Time (UTC):** ${formattedDatetime} - **Dep:** ${depArr}\n**Aircraft:** ${aircraft} - **Callsign:** ${callsign}\n**Wx:** ${meteo}\n**Sortie:** ${sortie} - **Mission:** ${modifiedType}\n**Loadout:** ${loadout} - **Roe:** ${roe}\n**Bingo:** ${bingo} - **Bullseye:** ${be} - **A/A:** ${aa}  - **IFF:** ${iff}\n**Flight Plan:** ${flightplan} - **server:** ${server}\n\n**Note:** ${note}`;
+            // Use modifiedType in the message <@&1426505615790047242> applicant <@&1275106435059159082> unsafe   
+            const message = `**Date/Time (UTC):** ${formattedDatetime} -**Dep:** ${depArr}\n**Aircraft:** ${aircraft} - **Callsign:** ${callsign}\n**Wx:** ${meteo}\n**Sortie:** ${sortie} - **Mission:** ${modifiedType}\n**Loadout:** ${loadout} - **Roe:** ${roe}\n**Bingo:** ${bingo} - **Bullseye:** ${be} - **A/A:** ${aa}  - **IFF:** ${iff}\n**Flight Plan:** ${flightplan} - **server:** ${server}\n\n**Note:** ${note}`;
 
         // Send the message to 4 Stormo Discord
         fetch('https://discord.com/api/webhooks/1320392615245648003/4kfbJdcMuR2w_rUUtPJ5069DuJD3aKfSbkUvpJS2sVY0HLcfvKZ95qlXDZEYDmtMlmGu', {
